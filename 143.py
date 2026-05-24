@@ -23,3 +23,5 @@ class Solution:
         for i in range(0, len(stack)):
             if i + 1 < len(stack):
                 stack[i].next = stack[i + 1]
+            else:
+                stack[i].next = None
