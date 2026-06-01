@@ -1,0 +1,22 @@
+import string
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        temp = ""
+        lowercase_list = list(string.ascii_lowercase)
+        nums = [str(x) for x in range(10)]
+        for c in s:
+            if c in lowercase_list or c in nums:
+                temp += c
+        s = temp
+        if len(s) % 2 == 0:
+            left = len(s) // 2 - 1
+            right = len(s) // 2
+        else:
+            left = right = len(s) // 2
+        while left >= 0 and right < len(s):
+            if s[left] != s[right]:
+                return False
+            left -= 1
+            right += 1
+        return True
