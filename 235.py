@@ -23,7 +23,8 @@ class Solution:
         pathQ = []
         find(root, p.val, pathP)
         find(root, q.val, pathQ)
-
+        pathQ = set(pathQ)
+        
         while pathP:
             lastElement = pathP.pop()
             if lastElement in pathQ:
